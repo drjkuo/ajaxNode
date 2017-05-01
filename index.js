@@ -13,7 +13,11 @@ app.get('/', function (req, res) {
     // res.end('_testcb(\'{"message": "Hello world!!"}\')');
     // res.end('_testcb()');
     // res.end('_testcb(' + req.query.name + ')');
+<<<<<<< HEAD
     // res.header('Content-type','application/json');
+=======
+    res.header('Content-type','application/json');
+>>>>>>> 0478d9a564fb9011b407345c17a52a782b2e22bf
     res.jsonp(req.query.name);
 });
 
