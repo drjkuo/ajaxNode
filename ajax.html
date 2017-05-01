@@ -1,30 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="utf-8" />
-    <title>get test</title>
+  <meta charset="utf-8" />
+  <title>get test</title>
 </head>
 <body>
-    <h1>Get Test</h1>
-    <div id="test"></div>
+  <h1>Get Test</h1>
+  <div id="test"></div>
 
-    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
-    <script>
-    $(document).ready(function() {
-        $.ajax({
-            url: 'http://localhost:3000/',
-            dataType: "jsonp",
-            jsonpCallback: "_testcb",
-            cache: false,
-            timeout: 1000,
-            success: function(data) {
-                $("#test").append(data);
-            },
-            error: function(jqXHR, textStatus, errorThrown) {
-                alert('error ' + textStatus + " " + errorThrown);
-            }
-        });
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.5.1/jquery.js"></script>
+  <script>
+  $(document).ready(function() {
+
+    $.ajax({
+      url: 'http://localhost:3000/',
+      dataType: "jsonp",
+      // data: {"name": "Kuo"},
+      // headers: {"name": "Kuo"},
+      data: {
+        name: "Kuo122",
+        format: "json"
+      },
+      // jsonpCallback: "callback", // name of callback function
+      cache: false,
+      timeout: 500,
+      success: function(datar) {
+        $("#test").append(datar);
+      },
+      error: function(jqXHR, textStatus, errorThrown) {
+        alert('error ' + textStatus + " " + errorThrown);
+      }
     });
-    </script>
+  });
+  </script>
 </body>
 </html>
